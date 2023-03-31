@@ -1,0 +1,398 @@
+/* IMPORT ICONS FROM fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* START CSS HERE */
+:root {
+  --primary: #1f4068;
+  --secondary: #6482c9;
+  --bg-color: #f3f4f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  position: fixed;
+  transition: 0.3s;
+  z-index: 1;
+  padding: 30px 0;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.nav-logo a {
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-logo a span {
+  color: var(--primary, #1f4068);
+}
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--secondary, #6482c9);
+  display: block;
+  padding: 40px 0;
+  text-align: center;
+  clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+  transition: all 0.3s ease;
+}
+
+/* Line */
+.line {
+  display: inline;
+  position: relative;
+}
+
+.line:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  border-bottom: 3px solid var(--primary, #1f4068);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.line:hover:after {
+  left: 0;
+  width: 100%;
+  transform: scaleX(1);
+}
+
+/* Font-Awesome Icons */
+.icon {
+  display: block;
+  color: var(--bg-color, #f3f4f5);
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.icon.hide {
+  display: none;
+}
+
+.icon.cancel-btn.show {
+  display: block;
+}
+
+.icon.cancel-btn {
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  display: none;
+}
+
+nav.sticky .nav-list {
+  clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
+}
+
+nav .nav-list.active {
+  clip-path: circle(75%);
+}
+
+nav .nav-list li {
+  margin-top: 45px;
+}
+
+nav .nav-list li a {
+  font-size: 24px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-list .submenu-show {
+  display: none;
+}
+
+body.disabledScroll {
+  overflow: hidden;
+}
+
+nav.sticky {
+  padding: 15px 0;
+  background-color: white;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+hr {
+  border-radius: 1px;
+  padding: 1px;
+  margin: 1rem 0;
+  background-color: var(--bg-color, #f3f4f5);
+}
+
+main h1 {
+  font-weight: 700;
+}
+
+main .container {
+  padding: 20px;
+  background-color: var(--primary, #1f4068);
+}
+
+.semester {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--bg-color, #f3f4f5);
+  background-color: var(--primary, #1f4068);
+}
+
+/* Course */
+.list-course {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.course {
+  background-color: var(--bg-color, #f3f4f5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.course:last-child {
+  margin-right: 0;
+}
+
+.course h1 {
+  padding: 0;
+  color: var(--secondary, #6482c9);
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.course h3 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.info-matkul {
+  margin-top: 4px;
+}
+
+.dosen {
+  margin-top: 8px;
+}
+
+.course p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Aside */
+aside {
+  padding: 20px 20px;
+  width: 100%;
+  background-color: var(--bg-color, #1f4068);
+  text-align: center;
+}
+
+aside h1 {
+  padding-bottom: 20px;
+  color: var(--primary, #1f4068);
+  font-size: 24px;
+}
+
+aside img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+aside h3 {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: var(--secondary, #6482c9);
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+footer p a {
+  color: var(--primary, #1f4068);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 576px) {
+  .list-course {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list-course {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  nav .nav-list {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    display: inline-flex;
+    height: auto;
+    margin: 0;
+    clip-path: none;
+    padding: 0;
+  }
+
+  nav .nav-list li {
+    margin-top: 0;
+  }
+
+  nav .nav-list li a {
+    font-size: 18px;
+    padding: 0 8px;
+    color: black;
+  }
+
+  nav.sticky .nav-list {
+    clip-path: none;
+  }
+
+  nav .icon.menu-btn {
+    display: none;
+  }
+
+  .nav-list ul {
+    max-width: 250px;
+    position: absolute;
+    padding: 10px 0;
+    transition: all ease 0.5s;
+  }
+
+  .nav-list ul li {
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-list ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+    background-color: var(--secondary, #2a9d8f);
+    color: white;
+  }
+
+  .nav-list ul li:first-child a {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .nav-list ul li:last-child a {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .nav-list ul li a:hover {
+    background-color: var(--primary, #1f4068);
+    color: white;
+  }
+
+  .nav-list .submenu-hide {
+    display: none;
+  }
+
+  .nav-list .submenu-show {
+    display: block;
+    padding: 30px 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .list-course {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
